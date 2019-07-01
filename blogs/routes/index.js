@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/reg',User.reg);
-router.post('/reg',User.do_reg);
+router.post('/reg',User.do_reg); // do_reg 专门接收穿过来的数据 
 
 module.exports = router;

@@ -1,6 +1,6 @@
 // 注册
 exports.reg = function(req,res,next){
-    res,render("reg.ejs");
+    res.render("reg.ejs");
 }
 
 exports.do_reg = function(req,res,next){
