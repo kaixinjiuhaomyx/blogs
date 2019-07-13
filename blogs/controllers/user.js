@@ -16,9 +16,17 @@ exports.do_reg = function(req,res,next){
             res.redirect('/login');
         }
     })
-}
+} 
 
 exports.login = function(req,res,next){
     res.render("login.ejs");
 }
  
+exports.do_login = function(req,res,next){
+    var name = req.body.uname;
+    var pass = req.body.pass;
+
+    User_model.sel_name_by_pass(name,pass,function(err,data){
+        console.log(data)
+    })
+}
