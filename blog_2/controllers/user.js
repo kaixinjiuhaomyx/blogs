@@ -40,11 +40,19 @@ exports.do_login = function(req,res,next){
     User_model.set_all(name,pass,function(err,data){
         // console.log(data);
         if(data.length == 1){
-            // req.redirect('index');
-            res.send("success");
+            res.redirect('/');
+            // res.send("success");
         }else{
             res.redirect('/login');
         }
 
+
     })
+}
+
+
+exports.unlogin = function(req,res,next){
+    console.log(req.session);
+    req.session = null;
+    res.redirect('/');
 }
